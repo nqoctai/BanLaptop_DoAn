@@ -1,0 +1,55 @@
+﻿@model BanLaptop_DoAn.ViewModel.RegisterVM
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/LayoutLoginRegister.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "TaiKhoan", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.TenNguoiDung)
+            @Html.TextBoxFor(temp => temp.TenNguoiDung, new
+            {
+                placeholder =
+           "Tên Người Dùng",
+                @class = "form-control"
+            })
+            @Html.ValidationMessageFor(temp => temp.TenNguoiDung)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.Email)
+            @Html.TextBoxFor(temp => temp.Email, new
+            {
+                placeholder =
+           "Email",
+                @class = "form-control"
+            })
+            @Html.ValidationMessageFor(temp => temp.Email)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.MatKhau)
+            @Html.PasswordFor(temp => temp.MatKhau, new
+            {
+                placeholder =
+           "Mật khẩu",
+                @class = "form-control"
+            })
+            @Html.ValidationMessageFor(temp => temp.MatKhau)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(temp => temp.XacNhanMatKhau)
+            @Html.PasswordFor(temp => temp.XacNhanMatKhau, new
+            {
+                placeholder =
+           "Xác nhận mật khẩu",
+                @class = "form-control"
+            })
+            @Html.ValidationMessageFor(temp => temp.XacNhanMatKhau)
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Register</button>
+}

@@ -1,0 +1,47 @@
+﻿@model BanLaptop_DoAn.ViewModel.LoginVM
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/LayoutLoginRegister.cshtml";
+}
+
+@using (Html.BeginForm("Login", "TaiKhoan", FormMethod.Post))
+{
+    <div class="row w-25 mx-auto">
+        <div class="col-md-12">
+            @Html.LabelFor(temp => temp.TenNguoiDung)
+            @Html.TextBoxFor(temp => temp.TenNguoiDung, new
+            {
+                placeholder =
+           "Tên đăng nhập",
+                @class = "form-control"
+            })
+            @Html.ValidationMessageFor(temp => temp.TenNguoiDung)
+        </div>
+        <div class="col-md-12">
+            @Html.LabelFor(temp => temp.MatKhau)
+            @Html.PasswordFor(temp => temp.MatKhau, new
+            {
+                placeholder =
+           "Mật khẩu",
+                @class = "form-control"
+            })
+            @Html.ValidationMessageFor(temp => temp.MatKhau)
+        </div>
+
+    </div>
+    <div class="row w-25 mx-auto">
+        <div class="col-md-12">
+            @Html.ValidationSummary()
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Login</button>
+        </div>
+
+    </div>
+
+}
+
