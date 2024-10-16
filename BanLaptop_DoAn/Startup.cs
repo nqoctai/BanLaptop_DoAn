@@ -24,8 +24,6 @@ namespace BanLaptop_DoAn
                 LoginPath = new PathString("/TaiKhoan/Login")
             });
             CreateRolesandUsers();
-
-
         }
 
         public void CreateRolesandUsers()

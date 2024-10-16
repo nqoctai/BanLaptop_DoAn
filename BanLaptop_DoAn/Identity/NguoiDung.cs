@@ -11,5 +11,7 @@ namespace BanLaptop_DoAn.Identity
         public DateTime? NgaySinh { get; set; }
         public string DiaChi { get; set; }
         public string HoVaTen { get; set; }
+
+        public string Avatar { get; set; }
     }
 }

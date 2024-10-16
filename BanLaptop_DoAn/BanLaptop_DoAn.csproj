@@ -170,6 +170,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\NguoiDungController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TaiKhoanController.cs" />
@@ -184,6 +186,10 @@
     <Compile Include="IdentityMigrations\202410151022373_init.cs" />
     <Compile Include="IdentityMigrations\202410151022373_init.Designer.cs">
       <DependentUpon>202410151022373_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdentityMigrations\202410160258514_themavatar.cs" />
+    <Compile Include="IdentityMigrations\202410160258514_themavatar.Designer.cs">
+      <DependentUpon>202410160258514_themavatar.cs</DependentUpon>
     </Compile>
     <Compile Include="IdentityMigrations\Configuration.cs" />
     <Compile Include="Identity\AppDbContext.cs" />
@@ -200,6 +206,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\NguoiDungVaiTroVM.cs" />
     <Compile Include="ViewModel\RegisterVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +340,10 @@
     <Content Include="Areas\Admin\Views\Shared\LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\TrangChu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\BangSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\ThemNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\BangNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\ThemSanPham.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -360,10 +371,18 @@
     <Content Include="Views\TaiKhoan\Register.cshtml" />
     <Content Include="Views\TaiKhoan\Login.cshtml" />
     <Content Include="Views\Home\Error404.cshtml" />
+    <Content Include="Views\Home\GioiThieu.cshtml" />
+    <Content Include="Views\Home\SanPham.cshtml" />
+    <Content Include="Views\Home\GioHang.cshtml" />
+    <Content Include="Views\Home\LienHe.cshtml" />
+    <Content Include="Views\Home\ThanhToan.cshtml" />
+    <Content Include="Views\Home\DatHangThanhCong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Content\Upload\Avatar\" />
+    <Folder Include="Content\Upload\HinhAnh\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -395,6 +414,9 @@
   <ItemGroup>
     <EmbeddedResource Include="IdentityMigrations\202410151022373_init.resx">
       <DependentUpon>202410151022373_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentityMigrations\202410160258514_themavatar.resx">
+      <DependentUpon>202410160258514_themavatar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410151021320_init.resx">
       <DependentUpon>202410151021320_init.cs</DependentUpon>
