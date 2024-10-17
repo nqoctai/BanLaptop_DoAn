@@ -38,6 +38,7 @@
                         NgaySinh = c.DateTime(),
                         DiaChi = c.String(),
                         HoVaTen = c.String(),
+                        Avatar = c.String(),
                         Email = c.String(maxLength: 256),
                         XacNhanEmail = c.Boolean(nullable: false),
                         MatKhau = c.String(),

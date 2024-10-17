@@ -30,17 +30,20 @@
                             <h3 class="text-secondary">
                                 User Table
                             </h3>
-                            <div class="input-group"
-                                 style="width: 300px">
-                                <input type="text"
-                                       class="form-control"
-                                       placeholder="Search by email..."
-                                       aria-label="Search by email" />
-                                <button class="btn btn-primary"
-                                        type="button">
-                                    <ion-icon name="search-outline"></ion-icon>
-                                </button>
-                            </div>
+                            <form action="/Admin/NguoiDung/TimKiemTheoEmail" method="post">
+                                <div class="input-group"
+                                     style="width: 300px">
+                                    <input type="text"
+                                           class="form-control"
+                                           name="txtSearch"
+                                           placeholder="Search by email..."
+                                           aria-label="Search by email" />
+                                    <button class="btn btn-primary"
+                                            type="submit">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </button>
+                                </div>
+                            </form>
                             <a href="/Admin/NguoiDung/ThemNguoiDung"
                                class="btn btn-primary rounded-pill">
                                 <i class="bi bi-plus-circle"></i>
@@ -55,9 +58,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Email</th>
-                                        <th>Full Name</th>
-                                        <th>Role</th>
-                                        <th>Action</th>
+                                        <th>Tên đăng nhập</th>
+                                        <th>Vai trò</th>
+                                        <th>Hành động</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,17 +74,17 @@
                                                 <span class="badge bg-success">@user.VaiTro</span>
                                             </td>
                                             <td>
-                                                <a href="../admin/showView-User.html"
+                                                <a href="/Admin/NguoiDung/XemNguoiDung/?id=@user.Id"
                                                    class="btn btn-success btn-sm">
                                                     <ion-icon name="eye-outline"></ion-icon>
                                                 </a>
-                                                <a href="../admin/showUpdate-User.html"
+                                                <a href="/Admin/NguoiDung/ChinhSuaNguoiDung/?id=@user.Id"
                                                    class="btn btn-warning btn-sm mx-2">
                                                     <ion-icon name="pencil-outline"></ion-icon>
                                                 </a>
-                                                <a href="#"
+                                                <a href="/Admin/NguoiDung/XoaNguoiDung/?id=@user.Id"
                                                    class="btn btn-danger btn-sm"
-                                                   onclick="confirmDelete(1)">
+                                                   onclick="confirmDelete(@user.Id)">
                                                     <ion-icon name="trash-outline"></ion-icon>
                                                 </a>
                                             </td>
@@ -95,6 +98,7 @@
             </div>
         </div>
     </main>
+
 
     <footer class="py-4 bg-light mt-auto">
         <div class="container-fluid px-4">

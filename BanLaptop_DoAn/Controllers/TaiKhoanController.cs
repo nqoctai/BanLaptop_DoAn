@@ -68,7 +68,7 @@ namespace BanLaptop_DoAn.Controllers
                 var authenManager = HttpContext.GetOwinContext().Authentication;
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenManager.SignIn(new AuthenticationProperties() { }, userIdentity);
-                if (userManager.IsInRole(user.Id, "Admin"))
+                if (userManager.IsInRole(user.Id, "Admin") || userManager.IsInRole(user.Id, "Manager"))
                 {
                     return RedirectToAction("Index", "TrangChu", new { area = "Admin" });
                 }

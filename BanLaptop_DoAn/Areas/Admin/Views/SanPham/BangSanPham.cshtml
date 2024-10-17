@@ -93,7 +93,22 @@
                             <h3 class="text-secondary">
                                 Product Table
                             </h3>
-                            <a href="/admin/createProduct.html"
+                            <form action="/Admin/SanPham/TimKiemSanPham" method="post">
+                                <div class="input-group"
+                                     style="width: 300px">
+                                    <input type="text"
+                                           class="form-control"
+                                           name="txtSearch"
+                                           placeholder="Search by Name..."
+                                           aria-label="Search by Name" />
+                                    <button class="btn btn-primary"
+                                            type="submit">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </button>
+                                </div>
+                            </form>
+                           
+                            <a href="/Admin/SanPham/ThemSanPham"
                                class="btn btn-primary rounded-pill">
                                 <i class="bi bi-plus-circle"></i>
                                 Create a Product
@@ -109,6 +124,7 @@
                                         <th>ID</th>
                                         <th>Tên sản phẩm</th>
                                         <th>Giá</th>
+                                        <th>Loại</th>
                                         <th>Thương hiệu</th>
                                         <th>Hành động</th>
                                     </tr>
@@ -122,17 +138,18 @@
                                                 @sp.Ten
                                             </td>
                                             <td>@sp.Gia</td>
-                                            <td>@sp.ThuongHieu</td>
+                                            <td>@sp.LoaiSanPham.TenLoai</td>
+                                            <td>@sp.ThuongHieu.TenThuongHieu</td>
                                             <td>
-                                                <a href="#"
+                                                <a href="/Admin/SanPham/XemSanPham/?id=@sp.ID"
                                                    class="btn btn-success btn-sm">
                                                     <ion-icon name="eye-outline"></ion-icon>
                                                 </a>
-                                                <a href="#"
+                                                <a href="/Admin/SanPham/ChinhSuaSanPham/?id=@sp.ID"
                                                    class="btn btn-warning btn-sm mx-2">
                                                     <ion-icon name="pencil-outline"></ion-icon>
                                                 </a>
-                                                <a href="#"
+                                                <a href="/Admin/SanPham/XoaSanPham/?id=@sp.ID"
                                                    class="btn btn-danger btn-sm">
                                                     <ion-icon name="trash-outline"></ion-icon>
                                                 </a>

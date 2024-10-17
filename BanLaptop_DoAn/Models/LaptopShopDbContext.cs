@@ -12,5 +12,11 @@ namespace BanLaptop_DoAn.Models
         {
         }
         public DbSet<SanPham> SanPhams { get; set; }
+
+        public DbSet<ThuongHieu> ThuongHieus { get; set; }
+
+        public DbSet<LoaiSanPham> LoaiSanPhams { get; set; }
+
+        public DbSet<MucDichSuDung> MucDichSuDungs { get; set; }
     }
 }

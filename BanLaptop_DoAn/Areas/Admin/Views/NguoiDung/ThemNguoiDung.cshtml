@@ -98,12 +98,12 @@
                                         class="form-select"
                                         path="role.name"
                                         name="txtRoleName">
-                                    <option value="Admin">
-                                        ADMIN
-                                    </option>
-                                    <option value="Customer">
-                                        Customer
-                                    </option>
+                                    @foreach (var role in ViewBag.Roles)
+                                    {
+                                        <option value="@role.Name">
+                                            @role.Name
+                                        </option>
+                                    }
                                 </select>
                             </div>
                             <!-- Avatar -->

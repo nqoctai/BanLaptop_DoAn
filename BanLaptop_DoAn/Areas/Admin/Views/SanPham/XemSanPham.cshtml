@@ -1,0 +1,158 @@
+﻿@model BanLaptop_DoAn.Models.SanPham
+
+@{
+    ViewBag.Title = "XemSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .product-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+        height: auto;
+        max-height: 300px;
+        width: 100%;
+        object-fit: contain;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .product-details {
+        padding: 20px;
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .badge {
+        margin-right: 5px;
+    }
+
+    .btn-back {
+        margin-top: 20px;
+    }
+</style>
+
+<div id="layoutSidenav_content">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow-lg border-0">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="product-image-container">
+                                <img src="~/Content/img/@Model.HinhAnh"
+                                     alt="Product Image"
+                                     class="img-fluid product-image" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body p-5">
+                                <h3 class="card-title text-primary mb-4">
+                                    <strong>
+                                        @Model.Ten
+                                    </strong>
+                                </h3>
+                                <div class="mb-3">
+                                    <span class="badge bg-success me-2">Mới</span>
+                                    <span class="badge bg-warning text-dark">Ưu đãi</span>
+                                </div>
+                                <p class="card-text">
+                                    <strong>Mã sản phẩm:</strong> @Model.ID
+                                </p>
+                                <p class="card-text">
+                                    <strong>Giá:</strong>
+                                    <span class="text-danger fw-bold">@Model.Gia đ</span>
+                                </p>
+                                <p class="card-text">
+                                    <strong>Loại Sản Phẩm:</strong>
+                                    <span class="text-info">@Model.LoaiSanPham.TenLoai</span>
+                                </p>
+                                <p class="card-text">
+                                    <strong>Mục đích:</strong>
+                                    <span class="text-info">@Model.MucDichSuDung.TenMucDich</span>
+                                </p>
+                                <p class="card-text">
+                                    <strong>Thương hiệu:</strong>
+                                    <span class="text-info">@Model.ThuongHieu.TenThuongHieu</span>
+                                </p>
+                                <p class="card-text">
+                                    <strong>Chi tiết mô tả:</strong>
+                                </p>
+                                <p class="text-muted">
+                                    @Model.MoTaChiTiet
+                                </p>
+                                <div class="text-end mt-5">
+                                    <a href="/Admin/SanPham/BangSanPham"
+                                       class="btn btn-primary">
+                                        <i class="bi bi-arrow-left me-2"></i>Quay lại
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f0f2f5;
+    }
+
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .product-image-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+    }
+
+    .product-image {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .card-body {
+        background-color: #ffffff;
+        padding: 40px;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-text {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+</style>
+

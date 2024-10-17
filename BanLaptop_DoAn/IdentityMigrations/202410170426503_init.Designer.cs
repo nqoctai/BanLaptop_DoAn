@@ -7,13 +7,13 @@ namespace BanLaptop_DoAn.IdentityMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class themavatar : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(themavatar));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410160258514_themavatar"; }
+            get { return "202410170426503_init"; }
         }
         
         string IMigrationMetadata.Source

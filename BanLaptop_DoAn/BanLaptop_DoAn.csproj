@@ -183,26 +183,41 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IdentityMigrations\202410151022373_init.cs" />
-    <Compile Include="IdentityMigrations\202410151022373_init.Designer.cs">
-      <DependentUpon>202410151022373_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IdentityMigrations\202410160258514_themavatar.cs" />
-    <Compile Include="IdentityMigrations\202410160258514_themavatar.Designer.cs">
-      <DependentUpon>202410160258514_themavatar.cs</DependentUpon>
+    <Compile Include="IdentityMigrations\202410170426503_init.cs" />
+    <Compile Include="IdentityMigrations\202410170426503_init.Designer.cs">
+      <DependentUpon>202410170426503_init.cs</DependentUpon>
     </Compile>
     <Compile Include="IdentityMigrations\Configuration.cs" />
     <Compile Include="Identity\AppDbContext.cs" />
     <Compile Include="Identity\LuuTruNguoiDung.cs" />
     <Compile Include="Identity\NguoiDung.cs" />
     <Compile Include="Identity\QuanLyNguoiDung.cs" />
-    <Compile Include="Migrations\202410151021320_init.cs" />
-    <Compile Include="Migrations\202410151021320_init.Designer.cs">
-      <DependentUpon>202410151021320_init.cs</DependentUpon>
+    <Compile Include="Migrations\202410170417262_init.cs" />
+    <Compile Include="Migrations\202410170417262_init.Designer.cs">
+      <DependentUpon>202410170417262_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410170734486_ThemLoaiSanPham.cs" />
+    <Compile Include="Migrations\202410170734486_ThemLoaiSanPham.Designer.cs">
+      <DependentUpon>202410170734486_ThemLoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410170738310_SuaId.cs" />
+    <Compile Include="Migrations\202410170738310_SuaId.Designer.cs">
+      <DependentUpon>202410170738310_SuaId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410170828038_ThemMucDich.cs" />
+    <Compile Include="Migrations\202410170828038_ThemMucDich.Designer.cs">
+      <DependentUpon>202410170828038_ThemMucDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410170836041_UpdateMucDich.cs" />
+    <Compile Include="Migrations\202410170836041_UpdateMucDich.Designer.cs">
+      <DependentUpon>202410170836041_UpdateMucDich.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LaptopShopDbContext.cs" />
+    <Compile Include="Models\LoaiSanPham.cs" />
+    <Compile Include="Models\MucDichSuDung.cs" />
     <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\ThuongHieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
@@ -344,6 +359,12 @@
     <Content Include="Areas\Admin\Views\NguoiDung\ThemNguoiDung.cshtml" />
     <Content Include="Areas\Admin\Views\NguoiDung\BangNguoiDung.cshtml" />
     <Content Include="Areas\Admin\Views\SanPham\ThemSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\ChinhSuaNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\XemNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\XoaNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\XemSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\ChinhSuaSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPham\XoaSanPham.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -412,14 +433,23 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="IdentityMigrations\202410151022373_init.resx">
-      <DependentUpon>202410151022373_init.cs</DependentUpon>
+    <EmbeddedResource Include="IdentityMigrations\202410170426503_init.resx">
+      <DependentUpon>202410170426503_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IdentityMigrations\202410160258514_themavatar.resx">
-      <DependentUpon>202410160258514_themavatar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410170417262_init.resx">
+      <DependentUpon>202410170417262_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410151021320_init.resx">
-      <DependentUpon>202410151021320_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410170734486_ThemLoaiSanPham.resx">
+      <DependentUpon>202410170734486_ThemLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410170738310_SuaId.resx">
+      <DependentUpon>202410170738310_SuaId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410170828038_ThemMucDich.resx">
+      <DependentUpon>202410170828038_ThemMucDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410170836041_UpdateMucDich.resx">
+      <DependentUpon>202410170836041_UpdateMucDich.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

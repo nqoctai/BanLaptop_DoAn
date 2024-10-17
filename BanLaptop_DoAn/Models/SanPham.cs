@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace BanLaptop_DoAn.Models
 {
+    [Table("SanPhams")]
     public class SanPham
     {
 
@@ -21,7 +23,18 @@ namespace BanLaptop_DoAn.Models
 
         public long SoLuong { get; set; }
         public long DaBan { get; set; }
-        public string ThuongHieu { get; set; }
-        public string PhanKhucSanPham { get; set; }
+        [Required]
+        public long ThuongHieuId { get; set; }
+
+        [Required]
+        public long LoaiSanPhamId { get; set; }
+
+        public long MucDichSuDungId { get; set; }
+
+        public virtual ThuongHieu ThuongHieu { get; set; }
+
+        public virtual LoaiSanPham LoaiSanPham { get; set; }
+
+        public virtual MucDichSuDung MucDichSuDung { get; set; }
     }
 }

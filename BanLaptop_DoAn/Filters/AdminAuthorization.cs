@@ -10,7 +10,7 @@ namespace BanLaptop_DoAn.Filters
     {
         public void OnAuthorization(AuthorizationContext filterContext)
         {
-            if (filterContext.HttpContext.User.IsInRole("Admin") == false)
+            if (!(filterContext.HttpContext.User.IsInRole("Admin") || filterContext.HttpContext.User.IsInRole("Manager")))
             {
                 filterContext.Result = new HttpUnauthorizedResult();
             }

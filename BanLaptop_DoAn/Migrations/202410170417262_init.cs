@@ -19,15 +19,29 @@
                         MoTaNgan = c.String(),
                         SoLuong = c.Long(nullable: false),
                         DaBan = c.Long(nullable: false),
-                        ThuongHieu = c.String(),
                         PhanKhucSanPham = c.String(),
+                        ThuongHieuId = c.Long(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.ThuongHieus", t => t.ThuongHieuId, cascadeDelete: true)
+                .Index(t => t.ThuongHieuId);
+            
+            CreateTable(
+                "dbo.ThuongHieus",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        TenThuongHieu = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.SanPhams", "ThuongHieuId", "dbo.ThuongHieus");
+            DropIndex("dbo.SanPhams", new[] { "ThuongHieuId" });
+            DropTable("dbo.ThuongHieus");
             DropTable("dbo.SanPhams");
         }
     }

@@ -4,44 +4,46 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/LayoutLoginRegister.cshtml";
 }
+<div class="container">
+    <div class="form-container mx-auto">
+        <h2 class="text-center form-title mb-4">Đăng Nhập</h2>
 
-@using (Html.BeginForm("Login", "TaiKhoan", FormMethod.Post))
-{
-    <div class="row w-25 mx-auto">
-        <div class="col-md-12">
-            @Html.LabelFor(temp => temp.TenNguoiDung)
-            @Html.TextBoxFor(temp => temp.TenNguoiDung, new
-            {
-                placeholder =
-           "Tên đăng nhập",
-                @class = "form-control"
-            })
-            @Html.ValidationMessageFor(temp => temp.TenNguoiDung)
-        </div>
-        <div class="col-md-12">
-            @Html.LabelFor(temp => temp.MatKhau)
-            @Html.PasswordFor(temp => temp.MatKhau, new
-            {
-                placeholder =
-           "Mật khẩu",
-                @class = "form-control"
-            })
-            @Html.ValidationMessageFor(temp => temp.MatKhau)
-        </div>
+        <!-- Form bắt đầu với Html.BeginForm -->
+        @using (Html.BeginForm("Login", "TaiKhoan", FormMethod.Post))
+        {
+            <!-- Tên Người Dùng -->
+            <div class="mb-4 input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                @Html.TextBoxFor(m => m.TenNguoiDung, new { @class = "form-control", placeholder = "Nhập tên người dùng", required = "required" })
+                @Html.ValidationMessageFor(m => m.TenNguoiDung, "", new { @class = "text-danger" })
+            </div>
 
+            <!-- Mật Khẩu -->
+            <div class="mb-4 input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", placeholder = "Nhập mật khẩu", required = "required" })
+                @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "text-danger" })
+            </div>
+
+            <!-- Nút Đăng Nhập -->
+            <button type="submit" class="btn btn-success w-100">
+                Đăng Nhập
+            </button>
+
+            <!-- Thông báo lỗi tóm tắt (nếu có) -->
+            <div class="col-md-12 mt-3">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+
+            <!-- Đăng ký nếu chưa có tài khoản -->
+            <div class="text-center mt-4">
+                <small class="text-muted">
+                    Chưa có tài khoản?
+                    <a href="@Url.Action("Register", "TaiKhoan")" class="text-decoration-none">Đăng Ký</a>
+                </small>
+            </div>
+        }
     </div>
-    <div class="row w-25 mx-auto">
-        <div class="col-md-12">
-            @Html.ValidationSummary()
-        </div>
-        <div class="col-md-4">
+</div>
 
-        </div>
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-success">Login</button>
-        </div>
-
-    </div>
-
-}
 
